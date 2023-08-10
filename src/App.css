@@ -1,0 +1,144 @@
+@import "./styles/gloabal__variables.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  background-color: var(--dark-gray);
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+.game__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.game__content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+}
+
+.moves {
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.moves button {
+  background-color: var(--gray);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.7rem 0.2rem;
+  width: 230px;
+  margin: 0.6em;
+  border-radius: 5px;
+}
+
+.moves button:first-child {
+  color: white;
+}
+
+table {
+  background-color: var(--dark-gray);
+  border: none;
+}
+th,
+td {
+  border: 1.5px solid black;
+}
+
+tr,
+td {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background-color: var(--gray);
+  border-radius: 15px;
+  text-align: center;
+  border: 5px solid var(--dark-gray);
+}
+
+.motif {
+  font-size: 3rem;
+}
+
+td:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.turquoise {
+  color: var(--turquoise);
+}
+
+.hide {
+  display: none;
+}
+
+.turn span {
+  font-size: 2rem;
+  margin-right: 5px;
+  text-decoration: none;
+  animation: 0.6s ease-in-out turn-icon-animation;
+}
+
+.turn {
+  font-size: 16px;
+  animation: 0.6s ease-in-out turn-text-animation;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+}
+
+@keyframes turn-text-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .game__content {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: start;
+  }
+
+  tr,
+  td {
+    width: 150px;
+    height: 150px;
+    border: 7px solid var(--dark-gray);
+  }
+
+  .motif {
+    font-size: 5rem;
+  }
+
+  .turn span {
+    font-size: 2.5rem;
+  }
+  .turn {
+    font-size: 18px;
+  }
+}
