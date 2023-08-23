@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
 }
 
 .modal__contents {
@@ -24,6 +25,7 @@
   gap: 20px;
   color: white;
   margin: 10px;
+  z-index: 30;
 }
 
 .modal__contents button {
